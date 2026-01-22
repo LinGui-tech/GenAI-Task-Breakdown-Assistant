@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+🧠 AI Task Decomposer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight GenAI-powered web application that breaks down user-defined tasks into clear, actionable, and executable steps using the OpenAI API.
 
-Currently, two official plugins are available:
+This project demonstrates how structured prompt engineering and modern frontend practices can be combined to deliver deterministic, UI-ready AI outputs in a real-world product scenario.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+🌍 Live Demo
+✅ Frontend (Vercel): https://gen-ai-task-breakdown-assistant.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Features
 
-## Expanding the ESLint configuration
+Convert free-form tasks into step-by-step action plans
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Structured prompt engineering for stable and predictable AI output
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Clean, responsive UI built with React and Vite
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Direct integration with OpenAI’s Chat Completion API
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Optimized for fast iteration and real-time user feedback
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Frontend: React 18, TypeScript, Vite
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+AI / GenAI: OpenAI API (Chat Completion)
+
+Styling: CSS / TailwindCSS
+
+Tooling: ESLint, Git, npm
+
+🧩 Prompt Engineering Approach
+
+The application uses a carefully designed system prompt to ensure the model:
+
+Produces actionable, non-vague steps
+
+Follows a deterministic numbered list format
+
+Outputs content ready for direct UI rendering without post-processing
+
+Example prompt strategy:
+
+Role-based instruction (task planner)
+
+Output constraints (numbered list, verb-first steps)
+
+UI-oriented formatting rules
+
+🚀 Getting Started
+git clone git@github.com:LinGui-tech/GenAI-Task-Breakdown-Assistant.git
+cd GenAI-Task-Breakdown-Assistant
+npm install
+npm run dev
+
+
+Create a .env file:
+
+VITE_OPENAI_API_KEY=your_api_key_here
